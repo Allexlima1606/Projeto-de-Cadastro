@@ -19,14 +19,14 @@ function Users() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() =>{
-     async function fetchUser(){
+  useEffect(() => {
+    async function fetchUser() {
       const { data: newUsers } = await axios.get(`http://localhost:3001/users`);
-  
+
       setUsers(newUsers);
     }
 
-   fetchUser()
+    fetchUser()
   }, [])
 
 
@@ -38,8 +38,8 @@ function Users() {
     setUsers(newUsers);
   }
 
-  function goBackPage () {
-    navigate.push('/');
+  function goBackPage() {
+    navigate('/')
 
   }
 
@@ -53,16 +53,12 @@ function Users() {
           {users.map((user) => (
             <user key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
-              <button onClick={() => deleteUser(user.id)}>
-                <img src={trash} alt="lata-de-lixo"/>
-              </button>
+              <button onClick={() => deleteUser(user.id)}><img src={trash} alt="lata-de-lixo" /></button>
             </user>
-        ))}
+          ))}
         </ul>
 
-        <Button>
-        <img alt="Seta" src={arrow} /> Voltar 
-        </Button>
+        <Button onClick={goBackPage}><img alt="Seta" src={arrow} /> Voltar </Button>
 
       </ContainerItens>
     </Container>
