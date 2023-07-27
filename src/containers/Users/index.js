@@ -6,13 +6,12 @@ import axios from 'axios'
 import avatar from '../../assets/avatar.svg'
 import arrow from '../../assets/arrow.svg'
 import trash from '../../assets/trash.svg'
-
+import { H1 } from '../../components/Title/styles';
+import ContainerItens from '../../components/Container Itens';
+import Button from '../../components/Button';
 import {
   Container,
-  H1,
   Image,
-  ContainerItens,
-  Button,
 } from "./styles";
 
 function Users() {
@@ -46,19 +45,22 @@ function Users() {
   return (
     <Container>
       <Image alt="logo-image" src={avatar} />
-      <ContainerItens>
+      <ContainerItens isBlur={true}>
         <H1>Usuarios</H1>
 
-        <ul>
-          {users.map((user) => (
-            <user key={user.id}>
-              <p>{user.name}</p> <p>{user.age}</p>
-              <button onClick={() => deleteUser(user.id)}><img src={trash} alt="lata-de-lixo" /></button>
-            </user>
-          ))}
-        </ul>
 
-        <Button onClick={goBackPage}><img alt="Seta" src={arrow} /> Voltar </Button>
+        <div>
+          <ul>
+            {users.map((user) => (
+              <user key={user.id}>
+                <p>{user.name}</p> <p>{user.age}</p>
+                <button onClick={() => deleteUser(user.id)}><img src={trash} alt="lata-de-lixo" /></button>
+              </user>
+            ))}
+          </ul>
+        </div>
+
+        <Button isBack={true} onClick={goBackPage}><img alt="Seta" src={arrow} /> Voltar </Button>
 
       </ContainerItens>
     </Container>

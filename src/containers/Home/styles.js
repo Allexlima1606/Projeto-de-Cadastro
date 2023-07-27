@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import background from '../../assets/background1.svg'
 
@@ -12,40 +11,16 @@ export const Container = styled.div`
       align-items: center;
       gap: 40px;
       
-      height: 100vh;
+      height: 100%;
+      min-height: 100vh;
    `;
 
 export const Image = styled.img`
    margin: 30px;
    `;
 
-export const ContainerItens = styled.div`
-      background: linear-gradient(
-         157.44deg,
-         rgb(255, 255, 255, 0.6) 0.84%,
-         rgb(255, 255, 255, 0.6) 0.85%,
-         rgb(255, 255, 255, 0.15) 100%
-      );
 
-      border-radius: 61px 61px 0px 0px;
 
-      padding: 50px 36px;
-
-      display: flex;
-      flex-direction: column;
-
-      height: 100vh;
-   `;
-
-export const H1 = styled.h1`
-   font-style: normal;
-   font-weight: bold;
-   font-size: 34px;
-   line-height: 40px;
-   text-align: center;
-   color: #ffffff;
-   margin-bottom: 80px;
-    `;
 
 export const InputLabel = styled.p`
    letter-spacing: -0.408px;
@@ -75,36 +50,5 @@ export const Input = styled.input`
       color: #ffffff;
 `;
 
-export const Button = styled(Link)` 
-      width: 342px;
-      height: 74px;
-      margin-top: 130px;
 
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 14px;
-      border: none;
-
-      font-style: normal;
-      font-weight: bold;
-      font-size: 17px;
-      line-height: 28px;
-
-      color: #ffffff;
-      cursor: pointer;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-
-      &:hover{
-         opacity: 0.8;
-
-      }
-
-      &:active{
-         opacity: 0.5;
-      }
-
-`;
 

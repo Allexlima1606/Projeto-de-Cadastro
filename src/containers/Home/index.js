@@ -1,19 +1,20 @@
-import React, { useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 import People from '../../assets/people.svg';
 import arrow from '../../assets/arrow.svg';
 
+import { H1 } from '../../components/Title/styles';
+import ContainerItens from '../../components/Container Itens';
+import Button from '../../components/Button';
+
 
 import {
   Container,
-  H1,
   Image,
-  ContainerItens,
   InputLabel,
   Input,
-  Button,
 } from './styles';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
 
     setUsers([...users, newUsers]);
+
     navigate('/usuarios')
 
 
@@ -50,11 +52,11 @@ function App() {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder="Idade" />
 
-        <Button to="/usuarios" onClick={addNewUser}>
-          Cadastrar <img alt="Seta" src={arrow} />
-        </Button>
+        <Button onClick={addNewUser}>Cadastrar<img alt="Seta" src={arrow} /></Button>
 
-        
+
+
+
 
       </ContainerItens>
     </Container>

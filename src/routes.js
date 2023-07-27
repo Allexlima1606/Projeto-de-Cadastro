@@ -9,8 +9,8 @@ function MyRoutes() {
     return (
         <Router>
             <Routes>
-                <Route  path="/" navigate={<Home />} />
-                <Route  path="/usuarios" navigate={<Users />} />
+                <Route  path="/" element={<Home />} />
+                <Route  path="/usuarios" element={<Users />} />
             </Routes>
         </Router>
     )
